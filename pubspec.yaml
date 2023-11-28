@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.1.0 <4.0.0'
+  sdk: '>=2.15.0 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -37,8 +39,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^10.1.0
   flutter_rating_bar: ^4.0.1
-  intl: ^0.17.0
+  intl: ^0.18.1
   animations: ^2.0.3
+  get: ^4.6.6
+  intl_utils: ^2.8.6
+
 
 dev_dependencies:
   flutter_test:
@@ -80,19 +85,22 @@ flutter:
   fonts:
     - family: WorkSans
       fonts:
-        - asset: assets/fonts/WorkSans-Regular.ttf
-        - asset: assets/fonts/WorkSans-Medium.ttf
+        - asset: fonts/WorkSans-Regular.ttf
+        - asset: fonts/WorkSans-Medium.ttf
           weight: 500
-        - asset: assets/fonts/WorkSans-SemiBold.ttf
+        - asset: fonts/WorkSans-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/WorkSans-Bold.ttf
+        - asset: fonts/WorkSans-Bold.ttf
           weight: 700
     - family: Roboto
       fonts:
-        - asset: assets/fonts/Roboto-Bold.ttf
-        - asset: assets/fonts/Roboto-Regular.ttf
-        - asset: assets/fonts/Roboto-Medium.ttf
+        - asset: fonts/Roboto-Bold.ttf
+        - asset: fonts/Roboto-Regular.ttf
+        - asset: fonts/Roboto-Medium.ttf
           weight: 400
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
+  main_locale: en_US

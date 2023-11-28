@@ -57,7 +57,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
               children: <Widget>[
                 AspectRatio(
                   aspectRatio: 1.2,
-                  child: Image.asset('assets/design_course/webInterFace.png'),
+                  child: Image.asset('assets/webInterFace.png'),
                 ),
               ],
             ),
@@ -120,7 +120,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                     fontWeight: FontWeight.w200,
                                     fontSize: 22,
                                     letterSpacing: 0.27,
-                                    color: AppTheme.nearlyBlue,
+                                    color: AppTheme.primaryColor,
                                   ),
                                 ),
                                 Container(
@@ -138,7 +138,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                       ),
                                       Icon(
                                         Icons.star,
-                                        color: AppTheme.nearlyBlue,
+                                        color: AppTheme.primaryColor,
                                         size: 24,
                                       ),
                                     ],
@@ -208,7 +208,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                       ),
                                       child: Icon(
                                         Icons.add,
-                                        color: AppTheme.nearlyBlue,
+                                        color: AppTheme.primaryColor,
                                         size: 28,
                                       ),
                                     ),
@@ -220,14 +220,14 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                     child: Container(
                                       height: 48,
                                       decoration: BoxDecoration(
-                                        color: AppTheme.nearlyBlue,
+                                        color: AppTheme.primaryColor,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(16.0),
                                         ),
                                         boxShadow: <BoxShadow>[
                                           BoxShadow(
                                               color: AppTheme
-                                                  .nearlyBlue
+                                                  .primaryColor
                                                   .withOpacity(0.5),
                                               offset: const Offset(1.1, 1.1),
                                               blurRadius: 10.0),
@@ -270,7 +270,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                 scale: CurvedAnimation(
                     parent: animationController!, curve: Curves.fastOutSlowIn),
                 child: Card(
-                  color: AppTheme.nearlyBlue,
+                  color: AppTheme.primaryColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.0)),
                   elevation: 10.0,
@@ -343,7 +343,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
                   letterSpacing: 0.27,
-                  color: AppTheme.nearlyBlue,
+                  color: AppTheme.primaryColor,
                 ),
               ),
               Text(

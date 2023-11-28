@@ -150,10 +150,10 @@ class _HomePageState extends State<HomePage> {
       child: Container(
         decoration: BoxDecoration(
             color: isSelected
-                ? AppTheme.nearlyBlue
+                ? AppTheme.primaryColor
                 : AppTheme.nearlyWhite,
             borderRadius: const BorderRadius.all(Radius.circular(24.0)),
-            border: Border.all(color: AppTheme.nearlyBlue)),
+            border: Border.all(color: AppTheme.primaryColor)),
         child: Material(
           color: Colors.transparent,
           child: InkWell(
@@ -177,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                     letterSpacing: 0.27,
                     color: isSelected
                         ? AppTheme.nearlyWhite
-                        : AppTheme.nearlyBlue,
+                        : AppTheme.primaryColor,
                   ),
                 ),
               ),
@@ -220,7 +220,7 @@ class _HomePageState extends State<HomePage> {
                             fontFamily: 'WorkSans',
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
-                            color: AppTheme.nearlyBlue,
+                            color: AppTheme.primaryColor,
                           ),
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(
@@ -296,7 +296,7 @@ class _HomePageState extends State<HomePage> {
           Container(
             width: 60,
             height: 60,
-            child: Image.asset('assets/design_course/userImage.png'),
+            child: Image.asset('assets/userImage.png'),
           )
         ],
       ),

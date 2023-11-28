@@ -15,28 +15,28 @@ class CategoryEntity {
 
   static List<CategoryEntity> categoryList = <CategoryEntity>[
     CategoryEntity(
-      imagePath: 'assets/design_course/interFace1.png',
+      imagePath: 'assets/interFace1.png',
       title: 'User interface Design',
       lessonCount: 24,
       money: 25,
       rating: 4.3,
     ),
     CategoryEntity(
-      imagePath: 'assets/design_course/interFace2.png',
+      imagePath: 'assets/interFace2.png',
       title: 'User interface Design',
       lessonCount: 22,
       money: 18,
       rating: 4.6,
     ),
     CategoryEntity(
-      imagePath: 'assets/design_course/interFace1.png',
+      imagePath: 'assets/interFace1.png',
       title: 'User interface Design',
       lessonCount: 24,
       money: 25,
       rating: 4.3,
     ),
     CategoryEntity(
-      imagePath: 'assets/design_course/interFace2.png',
+      imagePath: 'assets/interFace2.png',
       title: 'User interface Design',
       lessonCount: 22,
       money: 18,
@@ -46,28 +46,28 @@ class CategoryEntity {
 
   static List<CategoryEntity> popularCourseList = <CategoryEntity>[
     CategoryEntity(
-      imagePath: 'assets/design_course/interFace3.png',
+      imagePath: 'assets/interFace3.png',
       title: 'App Design Course',
       lessonCount: 12,
       money: 25,
       rating: 4.8,
     ),
     CategoryEntity(
-      imagePath: 'assets/design_course/interFace4.png',
+      imagePath: 'assets/interFace4.png',
       title: 'Web Design Course',
       lessonCount: 28,
       money: 208,
       rating: 4.9,
     ),
     CategoryEntity(
-      imagePath: 'assets/design_course/interFace3.png',
+      imagePath: 'assets/interFace3.png',
       title: 'App Design Course',
       lessonCount: 12,
       money: 25,
       rating: 4.8,
     ),
     CategoryEntity(
-      imagePath: 'assets/design_course/interFace4.png',
+      imagePath: 'assets/interFace4.png',
       title: 'Web Design Course',
       lessonCount: 28,
       money: 208,
