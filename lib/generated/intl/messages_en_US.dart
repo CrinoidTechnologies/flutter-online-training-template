@@ -21,5 +21,30 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en_US';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "chooseYour": MessageLookupByLibrary.simpleMessage("Choose your"),
+        "designCourse": MessageLookupByLibrary.simpleMessage("Design Course"),
+        "discoverYourSocialTryToLogin": MessageLookupByLibrary.simpleMessage(
+            "Discover your social & Try to Login"),
+        "dontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "login": MessageLookupByLibrary.simpleMessage("LOGIN"),
+        "loginAccount": MessageLookupByLibrary.simpleMessage("Login Account"),
+        "page": MessageLookupByLibrary.simpleMessage("PAGE"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordMustBeWithIn620Characters":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must be with in 6-20 characters."),
+        "pleaseEnterEmail":
+            MessageLookupByLibrary.simpleMessage("Please enter email"),
+        "pleaseEnterPassword":
+            MessageLookupByLibrary.simpleMessage("Please enter password"),
+        "pleaseEnterValidEmail":
+            MessageLookupByLibrary.simpleMessage("Please enter valid email"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "validationSuccessful":
+            MessageLookupByLibrary.simpleMessage("Validation successful.")
+      };
 }

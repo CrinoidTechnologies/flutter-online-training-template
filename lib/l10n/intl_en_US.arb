@@ -1,1 +1,18 @@
-{}
+{
+  "loginAccount": "Login Account",
+  "discoverYourSocialTryToLogin": "Discover your social & Try to Login",
+  "login": "LOGIN",
+  "page": "PAGE",
+  "email": "Email",
+  "password": "Password",
+  "validationSuccessful": "Validation successful.",
+  "signIn": "Sign in",
+  "dontHaveAnAccount": "Don’t have an account?",
+  "signUp": "Sign up",
+  "pleaseEnterEmail": "Please enter email",
+  "pleaseEnterPassword": "Please enter password",
+  "pleaseEnterValidEmail": "Please enter valid email",
+  "passwordMustBeWithIn620Characters": "Password must be with in 6-20 characters.",
+  "chooseYour": "Choose your",
+  "designCourse": "Design Course"
+}
