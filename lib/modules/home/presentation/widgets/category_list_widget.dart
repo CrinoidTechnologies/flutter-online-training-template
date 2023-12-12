@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_training_template/ui/color_helper.dart';
 
 import '../../../../main.dart';
 import '../../../../ui/app_theme.dart';
@@ -8,6 +9,7 @@ class CategoryListView extends StatefulWidget {
   const CategoryListView({Key? key, this.callBack}) : super(key: key);
 
   final Function()? callBack;
+
   @override
   _CategoryListViewState createState() => _CategoryListViewState();
 }
@@ -120,7 +122,7 @@ class CategoryView extends StatelessWidget {
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
-                                color: HexColor('#F8FAFB'),
+                                color: ColorHelper.cardBgColor,
                                 borderRadius: const BorderRadius.all(
                                     Radius.circular(16.0)),
                               ),
@@ -139,12 +141,11 @@ class CategoryView extends StatelessWidget {
                                             child: Text(
                                               category!.title,
                                               textAlign: TextAlign.left,
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 16,
                                                 letterSpacing: 0.27,
-                                                color: AppTheme
-                                                    .darkerText,
+                                                color: ColorHelper.grey900Color,
                                               ),
                                             ),
                                           ),
@@ -164,12 +165,12 @@ class CategoryView extends StatelessWidget {
                                                 Text(
                                                   '${category!.lessonCount} lesson',
                                                   textAlign: TextAlign.left,
-                                                  style: const TextStyle(
+                                                  style: TextStyle(
                                                     fontWeight: FontWeight.w200,
                                                     fontSize: 12,
                                                     letterSpacing: 0.27,
-                                                    color: AppTheme
-                                                        .grey,
+                                                    color:
+                                                        ColorHelper.greyColor,
                                                   ),
                                                 ),
                                                 Container(
@@ -179,21 +180,19 @@ class CategoryView extends StatelessWidget {
                                                         '${category!.rating}',
                                                         textAlign:
                                                             TextAlign.left,
-                                                        style: const TextStyle(
+                                                        style: TextStyle(
                                                           fontWeight:
                                                               FontWeight.w200,
                                                           fontSize: 18,
                                                           letterSpacing: 0.27,
-                                                          color:
-                                                              AppTheme
-                                                                  .grey,
+                                                          color: ColorHelper
+                                                              .greyColor,
                                                         ),
                                                       ),
                                                       const Icon(
                                                         Icons.star,
-                                                        color:
-                                                            AppTheme
-                                                                .primaryColor,
+                                                        color: AppTheme
+                                                            .primaryColor,
                                                         size: 20,
                                                       ),
                                                     ],
@@ -219,14 +218,15 @@ class CategoryView extends StatelessWidget {
                                                     fontWeight: FontWeight.w600,
                                                     fontSize: 18,
                                                     letterSpacing: 0.27,
-                                                    color: AppTheme
-                                                        .primaryColor,
+                                                    color:
+                                                        AppTheme.primaryColor,
                                                   ),
                                                 ),
                                                 Container(
-                                                  decoration: const BoxDecoration(
-                                                    color: AppTheme
-                                                        .primaryColor,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                    color:
+                                                        AppTheme.primaryColor,
                                                     borderRadius:
                                                         BorderRadius.all(
                                                             Radius.circular(
@@ -234,13 +234,11 @@ class CategoryView extends StatelessWidget {
                                                   ),
                                                   child: const Padding(
                                                     padding:
-                                                        EdgeInsets.all(
-                                                            4.0),
+                                                        EdgeInsets.all(4.0),
                                                     child: Icon(
                                                       Icons.add,
                                                       color:
-                                                          AppTheme
-                                                              .nearlyWhite,
+                                                          AppTheme.nearlyWhite,
                                                     ),
                                                   ),
                                                 )

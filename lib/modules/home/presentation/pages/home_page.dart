@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:online_training_template/modules/course_details/presentation/pages/course_info_page.dart';
+import 'package:online_training_template/ui/color_helper.dart';
+import 'package:online_training_template/ui/routes/app_pages.dart';
+import 'package:online_training_template/ui/text_styles.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../../../main.dart';
 import '../../../../ui/app_theme.dart';
 import '../widgets/category_list_widget.dart';
@@ -17,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppTheme.nearlyWhite,
+      color: ColorHelper.bgColor,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Column(
@@ -62,7 +67,7 @@ class _HomePageState extends State<HomePage> {
               fontWeight: FontWeight.w600,
               fontSize: 22,
               letterSpacing: 0.27,
-              color: AppTheme.darkerText,
+              color: AppTheme.primaryColor,
             ),
           ),
         ),
@@ -106,14 +111,14 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
+          Text(
             'Popular Course',
             textAlign: TextAlign.left,
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 22,
               letterSpacing: 0.27,
-              color: AppTheme.darkerText,
+              color: ColorHelper.grey900Color,
             ),
           ),
           Flexible(
@@ -129,12 +134,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void moveTo() {
-    Navigator.push<dynamic>(
-      context,
-      MaterialPageRoute<dynamic>(
-        builder: (BuildContext context) => CourseInfoPage(),
-      ),
-    );
+    Get.toNamed(Routes.courseInfoPage);
   }
 
   Widget getButtonUI(CategoryType categoryTypeData, bool isSelected) {
@@ -149,9 +149,8 @@ class _HomePageState extends State<HomePage> {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-            color: isSelected
-                ? AppTheme.primaryColor
-                : AppTheme.nearlyWhite,
+            color:
+                isSelected ? ColorHelper.primaryColor : ColorHelper.cardBgColor,
             borderRadius: const BorderRadius.all(Radius.circular(24.0)),
             border: Border.all(color: AppTheme.primaryColor)),
         child: Material(
@@ -202,7 +201,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(top: 8, bottom: 8),
               child: Container(
                 decoration: BoxDecoration(
-                  color: HexColor('#F8FAFB'),
+                  color: ColorHelper.cardBgColor,
                   borderRadius: const BorderRadius.only(
                     bottomRight: Radius.circular(13.0),
                     bottomLeft: Radius.circular(13.0),
@@ -226,17 +225,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: InputDecoration(
                             labelText: 'Search for course',
                             border: InputBorder.none,
-                            helperStyle: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: HexColor('#B9BABC'),
-                            ),
-                            labelStyle: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                              letterSpacing: 0.2,
-                              color: HexColor('#B9BABC'),
-                            ),
+                            helperStyle: AppTextStyles.body1,
+                            labelStyle: AppTextStyles.body1,
                           ),
                           onEditingComplete: () {},
                         ),
@@ -265,30 +255,20 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.only(top: 8.0, left: 18, right: 18),
       child: Row(
         children: <Widget>[
-          const Expanded(
+          Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Choose your',
+                  S.of(context).chooseYour,
                   textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    letterSpacing: 0.2,
-                    color: AppTheme.grey,
-                  ),
+                  style: AppTextStyles.caption,
                 ),
                 Text(
-                  'Design Course',
+                  S.of(context).designCourse,
                   textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
-                    letterSpacing: 0.27,
-                    color: AppTheme.darkerText,
-                  ),
+                  style: AppTextStyles.title,
                 ),
               ],
             ),

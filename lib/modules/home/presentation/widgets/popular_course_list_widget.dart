@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_training_template/ui/color_helper.dart';
 
 import '../../../../main.dart';
 import '../../../../ui/app_theme.dart';
@@ -114,7 +115,7 @@ class CategoryView extends StatelessWidget {
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
-                                color: HexColor('#F8FAFB'),
+                                color: ColorHelper.cardBgColor,
                                 borderRadius: const BorderRadius.all(
                                     Radius.circular(16.0)),
                                 // border: new Border.all(
@@ -136,8 +137,7 @@ class CategoryView extends StatelessWidget {
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 16,
                                                 letterSpacing: 0.27,
-                                                color: AppTheme
-                                                    .darkerText,
+                                                color: ColorHelper.grey900Color,
                                               ),
                                             ),
                                           ),
@@ -161,8 +161,7 @@ class CategoryView extends StatelessWidget {
                                                     fontWeight: FontWeight.w200,
                                                     fontSize: 12,
                                                     letterSpacing: 0.27,
-                                                    color: AppTheme
-                                                        .grey,
+                                                    color: ColorHelper.greyColor,
                                                   ),
                                                 ),
                                                 Container(
@@ -177,9 +176,7 @@ class CategoryView extends StatelessWidget {
                                                               FontWeight.w200,
                                                           fontSize: 18,
                                                           letterSpacing: 0.27,
-                                                          color:
-                                                              AppTheme
-                                                                  .grey,
+                                                          color: ColorHelper.greyColor,
                                                         ),
                                                       ),
                                                       Icon(

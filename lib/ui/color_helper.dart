@@ -14,22 +14,28 @@ class ColorHelper {
 
   static Color get darkColor => Get.find<AppTheme>().darkColor;
 
+  static Color get bgColor => Get.find<AppTheme>().bgColor;
+
   /// primary color shades
   /// shade200
   static Color get primaryExtraLightColor =>
       Get.find<AppTheme>().primaryMaterialColor.shade200;
 
   /// shade400
-  static Color get primaryLightColor => Get.find<AppTheme>().primaryMaterialColor.shade400;
+  static Color get primaryLightColor =>
+      Get.find<AppTheme>().primaryMaterialColor.shade400;
 
   /// shade500
-  static Color get primaryColor => Get.find<AppTheme>().primaryMaterialColor.shade500;
+  static Color get primaryColor =>
+      Get.find<AppTheme>().primaryMaterialColor.shade500;
 
   /// shade600
-  static Color get primaryDarkColor => Get.find<AppTheme>().primaryMaterialColor.shade600;
+  static Color get primaryDarkColor =>
+      Get.find<AppTheme>().primaryMaterialColor.shade600;
 
   /// shade700
-  static Color get primaryDarkerColor => Get.find<AppTheme>().primaryMaterialColor.shade700;
+  static Color get primaryDarkerColor =>
+      Get.find<AppTheme>().primaryMaterialColor.shade700;
 
   static Color get primary700Color =>
       Get.find<AppTheme>().primaryMaterialColor.shade700;
@@ -79,6 +85,14 @@ class ColorHelper {
   static Color get grey400Color =>
       Get.find<AppTheme>().greyMaterialColor.shade400;
 
+  static Color get greyColor => Get.find<AppTheme>().greyMaterialColor.shade500;
+
   static Color get grey50Color =>
       Get.find<AppTheme>().greyMaterialColor.shade50;
+
+  static Color get secondaryColor => Get.find<AppTheme>().secondaryColor;
+
+  static Color get errorColor => Get.find<AppTheme>().errorColor;
+
+  static Color get cardBgColor => Get.find<AppTheme>().cardBgColor;
 }
