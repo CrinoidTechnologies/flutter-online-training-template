@@ -23,10 +23,15 @@ Following is the list of some modules included in this project.
 ### Screenshots
 ***
 
-| `Light Mode`                |
-| Home Page                   | Course Details Page                     
-| -----------                 | -----------------              
-| ![](/screenshots/home.png)  | ![](/screenshots/course_details.png)    
+| `Light Mode`                          |
+| Login Page                            | Home Page                       | Course Details Page                     
+| -----------                           | -----------                     | -----------------              
+| ![](/screenshots/login_page.png)      | ![](/screenshots/home.png)      | ![](/screenshots/course_details.png) 
+
+| `Dark Mode`                           |
+| Login Page                            | Home Page                       | Course Details Page                     
+| -----------                           | -----------                     | -----------------              
+| ![](/screenshots/login_page_drk.png)  | ![](/screenshots/home_drk.png)  | ![](/screenshots/course_details_drk.png)
 
 
 
