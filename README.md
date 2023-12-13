@@ -85,6 +85,9 @@ Here are some design resources used for creating the designs for this template.
 ***
 
 ```
+├── app
+│   └── di
+│       └── dependency_injection.dart
 ├── generated
 │   ├── intl
 │   │   ├── messages_all.dart
@@ -103,26 +106,41 @@ Here are some design resources used for creating the designs for this template.
 │   │       ├── pages
 │   │       │   └── course_info_page.dart
 │   │       └── widgets
-│   └── home
+│   ├── home
+│   │   ├── domain
+│   │   │   └── entities
+│   │   │       └── category_entity.dart
+│   │   └── presentation
+│   │       ├── bindings
+│   │       │   └── home_binding.dart
+│   │       ├── pages
+│   │       │   └── home_page.dart
+│   │       └── widgets
+│   │           ├── category_list_widget.dart
+│   │           └── popular_course_list_widget.dart
+│   └── login
 │       ├── domain
 │       │   └── entities
-│       │       └── category_entity.dart
+│       │       └── login_entity.dart
 │       └── presentation
 │           ├── bindings
-│           │   └── home_binding.dart
+│           │   └── login_binding.dart
 │           ├── pages
-│           │   └── home_page.dart
+│           │   └── login_page.dart
 │           └── widgets
-│               ├── category_list_widget.dart
-│               └── popular_course_list_widget.dart
-└── ui
-    ├── app_theme.dart
-    ├── color_helper.dart
-    ├── routes
-    │   ├── app_pages.dart
-    │   └── app_routes.dart
-    ├── styles.dart
-    └── text_styles.dart
+├── ui
+│   ├── app_theme.dart
+│   ├── color_helper.dart
+│   ├── controllers
+│   │   └── theme_controller.dart
+│   ├── routes
+│   │   ├── app_pages.dart
+│   │   └── app_routes.dart
+│   ├── styles.dart
+│   └── text_styles.dart
+└── validators
+    └── login_validator.dart
+
 ```
 
 
