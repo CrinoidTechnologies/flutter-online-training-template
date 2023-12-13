@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
             color:
                 isSelected ? ColorHelper.primaryColor : ColorHelper.cardBgColor,
             borderRadius: const BorderRadius.all(Radius.circular(24.0)),
-            border: Border.all(color: AppTheme.primaryColor)),
+            border: Border.all(color: ColorHelper.primaryColor)),
         child: Material(
           color: Colors.transparent,
           child: InkWell(

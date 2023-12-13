@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_training_template/ui/color_helper.dart';
+import 'package:online_training_template/ui/controllers/theme_controller.dart';
 import 'package:online_training_template/ui/routes/app_pages.dart';
+import 'package:online_training_template/ui/styles.dart';
 import 'package:online_training_template/ui/text_styles.dart';
 
 import '../../../../generated/l10n.dart';
@@ -27,6 +29,12 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    Get.find<ThemeController>().setThemeData(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
@@ -36,9 +44,28 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             //to give space from top
-            const Expanded(
+            Expanded(
               flex: 1,
-              child: Center(),
+              child: Padding(
+                padding:  EdgeInsets.all(Insets.l),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: InkWell(
+                    onTap: () {
+                      Get.find<ThemeController>().toggleTheme();
+                      setState(() {});
+                    },
+                    child: Obx(
+                      () => Icon(Get.find<ThemeController>()
+                                  .currentThemeMode
+                                  .value ==
+                              ThemeMode.dark
+                          ? Icons.light_mode
+                          : Icons.dark_mode),
+                    ),
+                  ),
+                ),
+              ),
             ),
 
             //page content here

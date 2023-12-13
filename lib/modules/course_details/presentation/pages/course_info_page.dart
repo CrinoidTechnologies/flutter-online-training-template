@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_training_template/ui/color_helper.dart';
 
 import '../../../../ui/app_theme.dart';
 
@@ -15,6 +16,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
   double opacity1 = 0.0;
   double opacity2 = 0.0;
   double opacity3 = 0.0;
+
   @override
   void initState() {
     animationController = AnimationController(
@@ -48,7 +50,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
         (MediaQuery.of(context).size.width / 1.2) +
         24.0;
     return Container(
-      color: AppTheme.nearlyWhite,
+      color: ColorHelper.bgColor,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
@@ -68,13 +70,13 @@ class _CourseInfoPageState extends State<CourseInfoPage>
               right: 0,
               child: Container(
                 decoration: BoxDecoration(
-                  color: AppTheme.nearlyWhite,
+                  color: ColorHelper.bgColor,
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(32.0),
                       topRight: Radius.circular(32.0)),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                        color: AppTheme.grey.withOpacity(0.2),
+                        color: ColorHelper.greyColor.withOpacity(0.2),
                         offset: const Offset(1.1, 1.1),
                         blurRadius: 10.0),
                   ],
@@ -102,7 +104,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                 fontWeight: FontWeight.w600,
                                 fontSize: 22,
                                 letterSpacing: 0.27,
-                                color: AppTheme.darkerText,
+                                color: ColorHelper.grey900Color,
                               ),
                             ),
                           ),
@@ -133,12 +135,12 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                           fontWeight: FontWeight.w200,
                                           fontSize: 22,
                                           letterSpacing: 0.27,
-                                          color: AppTheme.grey,
+                                          color: ColorHelper.grey900Color,
                                         ),
                                       ),
                                       Icon(
                                         Icons.star,
-                                        color: AppTheme.primaryColor,
+                                        color: ColorHelper.primaryColor,
                                         size: 24,
                                       ),
                                     ],
@@ -175,7 +177,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                     fontWeight: FontWeight.w200,
                                     fontSize: 14,
                                     letterSpacing: 0.27,
-                                    color: AppTheme.grey,
+                                    color: ColorHelper.grey700Color,
                                   ),
                                   maxLines: 3,
                                   overflow: TextOverflow.ellipsis,
@@ -198,12 +200,12 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                     height: 48,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: AppTheme.nearlyWhite,
+                                        color: ColorHelper.cardBgColor,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(16.0),
                                         ),
                                         border: Border.all(
-                                            color: AppTheme.grey
+                                            color: ColorHelper.greyColor
                                                 .withOpacity(0.2)),
                                       ),
                                       child: Icon(
@@ -220,14 +222,13 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                     child: Container(
                                       height: 48,
                                       decoration: BoxDecoration(
-                                        color: AppTheme.primaryColor,
+                                        color: ColorHelper.primaryColor,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(16.0),
                                         ),
                                         boxShadow: <BoxShadow>[
                                           BoxShadow(
-                                              color: AppTheme
-                                                  .primaryColor
+                                              color: ColorHelper.primaryColor
                                                   .withOpacity(0.5),
                                               offset: const Offset(1.1, 1.1),
                                               blurRadius: 10.0),
@@ -241,8 +242,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                                             fontWeight: FontWeight.w600,
                                             fontSize: 18,
                                             letterSpacing: 0.0,
-                                            color: AppTheme
-                                                .nearlyWhite,
+                                            color: ColorHelper.bgColor,
                                           ),
                                         ),
                                       ),
@@ -270,7 +270,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                 scale: CurvedAnimation(
                     parent: animationController!, curve: Curves.fastOutSlowIn),
                 child: Card(
-                  color: AppTheme.primaryColor,
+                  color: ColorHelper.primaryColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.0)),
                   elevation: 10.0,
@@ -280,7 +280,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                     child: Center(
                       child: Icon(
                         Icons.favorite,
-                        color: AppTheme.nearlyWhite,
+                        color: ColorHelper.bgColor,
                         size: 30,
                       ),
                     ),
@@ -300,7 +300,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                         BorderRadius.circular(AppBar().preferredSize.height),
                     child: Icon(
                       Icons.arrow_back_ios,
-                      color: AppTheme.nearlyBlack,
+                      color: ColorHelper.fixedDarkColor,
                     ),
                     onTap: () {
                       Navigator.pop(context);
@@ -320,7 +320,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          color: AppTheme.nearlyWhite,
+          color: ColorHelper.cardBgColor,
           borderRadius: const BorderRadius.all(Radius.circular(16.0)),
           boxShadow: <BoxShadow>[
             BoxShadow(
@@ -353,7 +353,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>
                   fontWeight: FontWeight.w200,
                   fontSize: 14,
                   letterSpacing: 0.27,
-                  color: AppTheme.grey,
+                  color:ColorHelper.greyColor,
                 ),
               ),
             ],

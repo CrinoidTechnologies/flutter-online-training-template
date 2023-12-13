@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:online_training_template/ui/text_styles.dart';
 
 import 'styles.dart';
 
+enum ThemeType { light, dark }
+
 class AppTheme {
-  AppTheme({
+  final ThemeType themType;
+
+  AppTheme(
+    this.themType, {
+    required this.isDark,
     required this.primaryMaterialColor,
-    required this.greyMaterialColor,
   });
 
-  static bool isDark = false;
+  bool isDark;
 
   static const int _appGrayColorValue = 0xFF8D959D;
   static const int _appPrimaryColorValue = 0xFF469d89;
@@ -22,66 +28,9 @@ class AppTheme {
   static const Color dark_grey = Color(0xFF313A44);
 
   MaterialColor primaryMaterialColor;
-  MaterialColor greyMaterialColor;
 
-  static const Color darkText = Color(0xFF253840);
-  static const Color darkerText = Color(0xFF17262A);
-  static const Color lightText = Color(0xFF4A6572);
-  static const Color deactivatedText = Color(0xFF767676);
-  static const Color dismissibleBackground = Color(0xFF364A54);
-  static const Color chipBackground = Color(0xFFEEF1F3);
-  static const Color spacer = Color(0xFFF2F2F2);
-
-  factory AppTheme.light() => AppTheme(
-        primaryMaterialColor: const MaterialColor(
-          _appPrimaryColorValue,
-          <int, Color>{
-            50: Color(0xFF99e2b4),
-            100: Color(0xFF88d4ab),
-            200: Color(0xFF78c6a3),
-            300: Color(0xFF67b99a),
-            400: Color(0xFF56ab91),
-            500: Color(_appPrimaryColorValue),
-            600: Color(0xFF358f80),
-            700: Color(0xFF248277),
-            800: Color(0xFF14746f),
-            900: Color(0xFF036666),
-          },
-        ),
-        greyMaterialColor: const MaterialColor(
-          _appGrayColorValue,
-          <int, Color>{
-            50: Color(0xFFF8F9FA),
-            100: Color(0xFFE9ECEF),
-            200: Color(0xFFDEE2E6),
-            300: Color(0xFFCED4DA),
-            400: Color(0xFFADB5BD),
-            500: Color(_appGrayColorValue),
-            600: Color(0xFF6C757D),
-            700: Color(0xFF495057),
-            800: Color(0xFF343A40),
-            900: Color(0xFF212529),
-          },
-        ),
-      );
-
-  factory AppTheme.dark() => AppTheme(
-        primaryMaterialColor: const MaterialColor(
-          _appPrimaryColorValue,
-          <int, Color>{
-            50: Color(0xFF99e2b4),
-            100: Color(0xFF88d4ab),
-            200: Color(0xFF78c6a3),
-            300: Color(0xFF67b99a),
-            400: Color(0xFF56ab91),
-            500: Color(_appPrimaryColorValue),
-            600: Color(0xFF358f80),
-            700: Color(0xFF248277),
-            800: Color(0xFF14746f),
-            900: Color(0xFF036666),
-          },
-        ),
-        greyMaterialColor: const MaterialColor(
+  MaterialColor get greyMaterialColor => isDark
+      ? const MaterialColor(
           _appGrayColorValue,
           <int, Color>{
             50: Color(0xFFF8F9FA),
@@ -95,14 +44,104 @@ class AppTheme {
             800: Color(0xFFCED4DA),
             900: Color(0xFFADB5BD),
           },
+        )
+      : const MaterialColor(
+          _appGrayColorValue,
+          <int, Color>{
+            50: Color(0xFFF8F9FA),
+            100: Color(0xFFE9ECEF),
+            200: Color(0xFFDEE2E6),
+            300: Color(0xFFCED4DA),
+            400: Color(0xFFADB5BD),
+            500: Color(_appGrayColorValue),
+            600: Color(0xFF6C757D),
+            700: Color(0xFF495057),
+            800: Color(0xFF343A40),
+            900: Color(0xFF212529),
+          },
+        );
+
+  static const Color darkText = Color(0xFF253840);
+  static const Color darkerText = Color(0xFF17262A);
+  static const Color lightText = Color(0xFF4A6572);
+  static const Color deactivatedText = Color(0xFF767676);
+  static const Color dismissibleBackground = Color(0xFF364A54);
+  static const Color chipBackground = Color(0xFFEEF1F3);
+  static const Color spacer = Color(0xFFF2F2F2);
+
+  factory AppTheme.light() => AppTheme(
+        ThemeType.light,
+        isDark: false,
+        primaryMaterialColor: const MaterialColor(
+          _appPrimaryColorValue,
+          <int, Color>{
+            50: Color(0xFF99e2b4),
+            100: Color(0xFF88d4ab),
+            200: Color(0xFF78c6a3),
+            300: Color(0xFF67b99a),
+            400: Color(0xFF56ab91),
+            500: Color(_appPrimaryColorValue),
+            600: Color(0xFF358f80),
+            700: Color(0xFF248277),
+            800: Color(0xFF14746f),
+            900: Color(0xFF036666),
+          },
         ),
       );
+
+  factory AppTheme.dark() => AppTheme(
+        ThemeType.dark,
+        isDark: true,
+        primaryMaterialColor: const MaterialColor(
+          _appPrimaryColorValue,
+          <int, Color>{
+            50: Color(0xFF99e2b4),
+            100: Color(0xFF88d4ab),
+            200: Color(0xFF78c6a3),
+            300: Color(0xFF67b99a),
+            400: Color(0xFF56ab91),
+            500: Color(_appPrimaryColorValue),
+            600: Color(0xFF358f80),
+            700: Color(0xFF248277),
+            800: Color(0xFF14746f),
+            900: Color(0xFF036666),
+          },
+        ),
+      );
+
+  factory AppTheme.fromThemeMode(ThemeMode t) {
+    switch (t) {
+      case ThemeMode.light:
+        return AppTheme.fromType(ThemeType.light);
+      case ThemeMode.dark:
+        return AppTheme.fromType(ThemeType.dark);
+      case ThemeMode.system:
+        {
+          var brightness = SchedulerBinding.instance!.window.platformBrightness;
+          bool isDarkMode = brightness == Brightness.dark;
+          return AppTheme.fromType(
+              isDarkMode ? ThemeType.dark : ThemeType.light);
+        }
+    }
+  }
+
+  factory AppTheme.fromType(ThemeType t) {
+    switch (t) {
+      case ThemeType.light:
+        return AppTheme.light();
+      case ThemeType.dark:
+        return AppTheme.dark();
+      default:
+        return AppTheme.light();
+    }
+  }
 
   ThemeData get themeData => ThemeData(
       fontFamily: Fonts.Roboto,
       primarySwatch: primaryMaterialColor,
-      textTheme: textTheme,
-      colorScheme: isDark ? ColorScheme.dark() : ColorScheme.light());
+      // textTheme: textTheme,
+      colorScheme:
+          isDark ? const ColorScheme.dark() : const ColorScheme.light());
 
   static TextTheme textTheme = TextTheme(
     headlineMedium: AppTextStyles.display1,
