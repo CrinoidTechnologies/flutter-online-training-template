@@ -5,6 +5,8 @@ import 'package:online_training_template/modules/home/presentation/bindings/home
 import 'package:online_training_template/modules/home/presentation/pages/home_page.dart';
 import 'package:online_training_template/modules/login/presentation/bindings/login_binding.dart';
 import 'package:online_training_template/modules/login/presentation/pages/login_page.dart';
+import 'package:online_training_template/modules/signup/presentation/bindings/signup_binding.dart';
+import 'package:online_training_template/modules/signup/presentation/pages/signup_page.dart';
 
 part 'app_routes.dart';
 
@@ -26,6 +28,10 @@ class AppPages {
         name: Routes.loginPage,
         page: () => const LoginPage(),
         binding: LoginBinding()),
+    GetPage(
+        name: Routes.signupPage,
+        page: () => const SignupPage(),
+        binding: SignUpBinding()),
   ];
 
   /// Add routes which are only required for development or testing purposes to below list,

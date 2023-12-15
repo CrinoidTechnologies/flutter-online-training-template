@@ -4,6 +4,7 @@ part of 'app_pages.dart';
 abstract class Routes {
   static const root = '/';
   static const loginPage = '/loginPage';
+  static const signupPage = '/signupPage';
   static const home = '/home';
   static const courseInfoPage = '/courseInfoPage';
 }

@@ -14,5 +14,10 @@
   "pleaseEnterValidEmail": "Please enter valid email",
   "passwordMustBeWithIn620Characters": "Password must be with in 6-20 characters.",
   "chooseYour": "Choose your",
-  "designCourse": "Design Course"
+  "designCourse": "Design Course",
+  "passwordMustIncludeOneCharacterOneNumericDigit": "Password must include one character & one numeric digit.",
+  "pleaseEnterYouFirstName": "Please enter you first name",
+  "pleaseEnterYouLastName": "Please enter you last name",
+  "pleaseEnterValidPassword": "Please enter valid password",
+  "passwordMustIncludeAtLeastOneUpperLowerCaseOne": "Password must include at least one upper & lower case, one special character & one numeric digit."
 }

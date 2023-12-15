@@ -209,6 +209,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Password must include one character & one numeric digit.`
+  String get passwordMustIncludeOneCharacterOneNumericDigit {
+    return Intl.message(
+      'Password must include one character & one numeric digit.',
+      name: 'passwordMustIncludeOneCharacterOneNumericDigit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter you first name`
+  String get pleaseEnterYouFirstName {
+    return Intl.message(
+      'Please enter you first name',
+      name: 'pleaseEnterYouFirstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter you last name`
+  String get pleaseEnterYouLastName {
+    return Intl.message(
+      'Please enter you last name',
+      name: 'pleaseEnterYouLastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter valid password`
+  String get pleaseEnterValidPassword {
+    return Intl.message(
+      'Please enter valid password',
+      name: 'pleaseEnterValidPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must include at least one upper & lower case, one special character & one numeric digit.`
+  String get passwordMustIncludeAtLeastOneUpperLowerCaseOne {
+    return Intl.message(
+      'Password must include at least one upper & lower case, one special character & one numeric digit.',
+      name: 'passwordMustIncludeAtLeastOneUpperLowerCaseOne',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

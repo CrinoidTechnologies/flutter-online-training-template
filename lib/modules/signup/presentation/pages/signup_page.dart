@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_training_template/modules/signup/domain/entities/signup_entity.dart';
 import 'package:online_training_template/ui/color_helper.dart';
 import 'package:online_training_template/ui/controllers/theme_controller.dart';
 import 'package:online_training_template/ui/routes/app_pages.dart';
 import 'package:online_training_template/ui/styles.dart';
 import 'package:online_training_template/ui/text_styles.dart';
+import 'package:online_training_template/validators/signup_validator.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../../validators/login_validator.dart';
-import '../../domain/entities/login_entity.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignupPage extends StatefulWidget {
+  const SignupPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  late LoginEntity _loginEntity;
+class _SignupPageState extends State<SignupPage> {
+  late SignupEntity _signupEntity;
 
-  String _loginStatus = '';
+  String _signupStatus = '';
 
   @override
   void initState() {
     super.initState();
-    _loginEntity = LoginEntity();
+    _signupEntity = SignupEntity();
   }
 
   @override
@@ -66,7 +67,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-
             //page content here
             Expanded(
               flex: 9,
@@ -86,59 +86,48 @@ class _LoginPageState extends State<LoginPage> {
             topLeft: Radius.circular(40), topRight: Radius.circular(40)),
         color: ColorHelper.bgColor,
       ),
-      child: Padding(
+      child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            //header text
-            Text(
-              S.of(context).loginAccount,
-              style: AppTextStyles.headline,
-            ),
-            SizedBox(
-              height: size.height * 0.01,
-            ),
-            Text(
-              S.of(context).discoverYourSocialTryToLogin,
-              style: AppTextStyles.caption,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(
-              height: size.height * 0.04,
-            ),
-            //logo section
-            richText(24),
-            SizedBox(
-              height: size.height * 0.05,
-            ),
-            //email & password section
-            emailTextField(size),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            passwordTextField(size),
-            SizedBox(
-              height: size.height * 0.03,
-            ),
-            Text(
-              _loginStatus.toString(),
-              style: AppTextStyles.captionError,
-              key: Key('txt_error'),
-            ),
-            SizedBox(
-              height: size.height * 0.03,
-            ),
-            //sign in button
-            signInButton(size),
-            SizedBox(
-              height: size.height * 0.04,
-            ),
-
-            //footer section. sign up text here
-            footerText(),
-          ],
-        ),
+        shrinkWrap: true,
+        children: <Widget>[
+          //logo section
+          Center(child: richText(24)),
+          SizedBox(
+            height: size.height * 0.05,
+          ),
+          //email & password section
+          firstNameTextField(size),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
+          lastNameTextField(size),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
+          emailTextField(size),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
+          passwordTextField(size),
+          SizedBox(
+            height: size.height * 0.03,
+          ),
+          Text(
+            _signupStatus.toString(),
+            style: AppTextStyles.captionError,
+            key: Key('txt_error'),
+          ),
+          SizedBox(
+            height: size.height * 0.03,
+          ),
+          //sign in button
+          signUnButton(size),
+          SizedBox(
+            height: size.height * 0.04,
+          ),
+          //footer section. sign up text here
+          Center(child: footerText()),
+        ],
       ),
     );
   }
@@ -149,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
         style: AppTextStyles.display1,
         children: [
           TextSpan(
-            text: S.of(context).login,
+            text: 'SignUp',
             style: const TextStyle(
               fontWeight: FontWeight.w800,
             ),
@@ -187,7 +176,61 @@ class _LoginPageState extends State<LoginPage> {
             labelStyle: AppTextStyles.body1,
             border: InputBorder.none),
         onChanged: (v) {
-          _loginEntity.email = v;
+          _signupEntity.email = v;
+        },
+      ),
+    );
+  }
+
+  Widget firstNameTextField(Size size) {
+    return Container(
+      alignment: Alignment.center,
+      height: size.height / 11,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.0),
+        border: Border.all(
+          width: 1.0,
+          color: const Color(0xFFEFEFEF),
+        ),
+      ),
+      child: TextField(
+        style: AppTextStyles.body1,
+        maxLines: 1,
+        cursorColor: const Color(0xFF15224F),
+        decoration: InputDecoration(
+            labelText: 'First Name',
+            labelStyle: AppTextStyles.body1,
+            border: InputBorder.none),
+        onChanged: (v) {
+          _signupEntity.firstName = v;
+        },
+      ),
+    );
+  }
+
+  Widget lastNameTextField(Size size) {
+    return Container(
+      alignment: Alignment.center,
+      height: size.height / 11,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.0),
+        border: Border.all(
+          width: 1.0,
+          color: const Color(0xFFEFEFEF),
+        ),
+      ),
+      child: TextField(
+        style: AppTextStyles.body1,
+        maxLines: 1,
+        cursorColor: const Color(0xFF15224F),
+        decoration: InputDecoration(
+            labelText: 'Last Name',
+            labelStyle: AppTextStyles.body1,
+            border: InputBorder.none),
+        onChanged: (v) {
+          _signupEntity.lastName = v;
         },
       ),
     );
@@ -216,20 +259,23 @@ class _LoginPageState extends State<LoginPage> {
             labelStyle: AppTextStyles.body1,
             border: InputBorder.none),
         onChanged: (v) {
-          _loginEntity.password = v;
+          _signupEntity.password = v;
         },
       ),
     );
   }
 
-  Widget signInButton(Size size) {
+  Widget signUnButton(Size size) {
     return InkWell(
       onTap: () {
         setState(() {
-          _loginStatus = LoginValidator(
-                  email: _loginEntity.email, password: _loginEntity.password)
-              .validate();
-          if (_loginStatus == S.of(context).validationSuccessful) {
+          _signupStatus = SignupValidator(
+            email: _signupEntity.email,
+            password: _signupEntity.password,
+            firstName: _signupEntity.firstName,
+            lastName: _signupEntity.lastName,
+          ).validate();
+          if (_signupStatus == S.of(context).validationSuccessful) {
             Get.offNamed(Routes.home);
           }
         });
@@ -249,7 +295,7 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
         child: Text(
-          S.of(context).signIn,
+          S.of(context).signUp,
           style: AppTextStyles.body2FixedLightColor,
           textAlign: TextAlign.center,
         ),
@@ -260,7 +306,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget footerText() {
     return InkWell(
       onTap: () {
-        Get.offNamed(Routes.signupPage);
+        Get.offNamed(Routes.loginPage);
       },
       child: Text.rich(
         TextSpan(
@@ -276,7 +322,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             TextSpan(
-              text: S.of(context).signUp,
+              text: S.of(context).login,
               style: TextStyle(
                 color: ColorHelper.secondaryColor,
                 fontWeight: FontWeight.w700,

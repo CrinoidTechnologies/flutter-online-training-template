@@ -36,12 +36,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordMustBeWithIn620Characters":
             MessageLookupByLibrary.simpleMessage(
                 "Password must be with in 6-20 characters."),
+        "passwordMustIncludeAtLeastOneUpperLowerCaseOne":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must include at least one upper & lower case, one special character & one numeric digit."),
+        "passwordMustIncludeOneCharacterOneNumericDigit":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must include one character & one numeric digit."),
         "pleaseEnterEmail":
             MessageLookupByLibrary.simpleMessage("Please enter email"),
         "pleaseEnterPassword":
             MessageLookupByLibrary.simpleMessage("Please enter password"),
         "pleaseEnterValidEmail":
             MessageLookupByLibrary.simpleMessage("Please enter valid email"),
+        "pleaseEnterValidPassword":
+            MessageLookupByLibrary.simpleMessage("Please enter valid password"),
+        "pleaseEnterYouFirstName":
+            MessageLookupByLibrary.simpleMessage("Please enter you first name"),
+        "pleaseEnterYouLastName":
+            MessageLookupByLibrary.simpleMessage("Please enter you last name"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
         "validationSuccessful":
