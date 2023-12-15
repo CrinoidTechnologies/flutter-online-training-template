@@ -5,10 +5,11 @@
 4. [Architecture Layers](#architecture-layers)
 5. [Design Resources](#design-resources)
 6. [Folder Structure](#folder-structure)
-7. [Installation Instructions](#installation-instructions)
-8. [Security](#security)
-9. [Performance](#performance)
-10. [Technologies](#technologies)
+7. [Test Cases](#test-cases)
+8. [Installation Instructions](#installation-instructions)
+9. [Security](#security)
+10. [Performance](#performance)
+11. [Technologies](#technologies)
 
 ### General Info
 ***
@@ -23,15 +24,15 @@ Following is the list of some modules included in this project.
 ### Screenshots
 ***
 
-| `Light Mode`                          |
-| Login Page                            | Home Page                       | Course Details Page                     
-| -----------                           | -----------                     | -----------------              
-| ![](/screenshots/login_page.png)      | ![](/screenshots/home.png)      | ![](/screenshots/course_details.png) 
+| `Light Mode`                              |
+| Login Page                                |Signup Page                                 | Home Page                           | Course Details Page                     
+| -----------                               |---------                                   | -----------                         | -----------------              
+| ![](/screenshots/login_page.png)          | ![](/screenshots/signup_page.png)          | ![](/screenshots/home.png)          | ![](/screenshots/course_details.png) 
 
-| `Dark Mode`                           |
-| Login Page                            | Home Page                       | Course Details Page                     
-| -----------                           | -----------                     | -----------------              
-| ![](/screenshots/login_page_drk.png)  | ![](/screenshots/home_drk.png)  | ![](/screenshots/course_details_drk.png)
+| `Dark Mode`                               |
+| Login Page                                |Signup Page                                 | Home Page                           | Course Details Page                     
+| -----------                               |---------                                   | -----------                         | -----------------              
+| ![](/screenshots/login_page_drk.png)      | ![](/screenshots/signup_page_drk.png)      | ![](/screenshots/home_drk.png)      | ![](/screenshots/course_details_drk.png)
 
 
 
@@ -85,6 +86,7 @@ Here are some design resources used for creating the designs for this template.
 ***
 
 ```
+.
 ├── app
 │   └── di
 │       └── dependency_injection.dart
@@ -118,15 +120,25 @@ Here are some design resources used for creating the designs for this template.
 │   │       └── widgets
 │   │           ├── category_list_widget.dart
 │   │           └── popular_course_list_widget.dart
-│   └── login
+│   ├── login
+│   │   ├── domain
+│   │   │   └── entities
+│   │   │       └── login_entity.dart
+│   │   └── presentation
+│   │       ├── bindings
+│   │       │   └── login_binding.dart
+│   │       ├── pages
+│   │       │   └── login_page.dart
+│   │       └── widgets
+│   └── signup
 │       ├── domain
 │       │   └── entities
-│       │       └── login_entity.dart
+│       │       └── signup_entity.dart
 │       └── presentation
 │           ├── bindings
-│           │   └── login_binding.dart
+│           │   └── signup_binding.dart
 │           ├── pages
-│           │   └── login_page.dart
+│           │   └── signup_page.dart
 │           └── widgets
 ├── ui
 │   ├── app_theme.dart
@@ -139,9 +151,36 @@ Here are some design resources used for creating the designs for this template.
 │   ├── styles.dart
 │   └── text_styles.dart
 └── validators
-    └── login_validator.dart
+    ├── login_validator.dart
+    └── signup_validator.dart
 
 ```
+
+### Test Cases
+***
+
+Basic Unit/Integration Test cases are implemented in this app to showcase how testcases helps to improve the quality & speed of the development.
+
+#### Steps to run the testcases
+
+1. Connect simulator or connect real device.
+2. Select the desired test case from the dropdown shown in reference below.
+   ![](/screenshots/select_testcase.png)
+3. Click on the "Run" button.
+4. After completing the test successfully you will see the output like shown in reference below.
+   ![](/screenshots/test_result.png)
+
+#### Note: You can find the test cases files by following the below mentioned folder structure.
+
+````
+├── test
+│   ├── login_test.dart
+│   ├── signup_test.dart
+│   └── widget_test.dart
+└── test_driver
+    └── integration_driver.dart
+
+````
 
 
 ### Installation Instructions
